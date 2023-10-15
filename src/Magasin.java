@@ -22,16 +22,6 @@ public class Magasin {
         this.nombreEmployes = 0;
     }
 
-    public void ajouterProduit(Produit produit) {
-        if (this.nombreProduits < CAPACITE_PROD_MAX) {
-            this.produits[this.nombreProduits] = produit;
-            this.nombreProduits++;
-            nombreTotalProduits++;
-            System.out.println("Le produit a été ajouté avec succès.");
-        } else {
-            System.out.println("Le magasin est plein. Impossible d'ajouter le produit.");
-        }
-    }
     public void ajouterEmploye(Employe employe) {
         if (this.nombreEmployes < CAPACITE_EMP_MAX) {
             this.employes[this.nombreEmployes] = employe;
@@ -41,7 +31,7 @@ public class Magasin {
             System.out.println("Le magasin est plein. Impossible d'ajouter l'employé.");
         }
     }
-    public  void ajouterEmploye(Produit p) throws MagasinPleinException, PrixNegatifException {
+    public  void ajouterProduit(Produit p) throws MagasinPleinException, PrixNegatifException {
     if (produit.getPrix() < 0) {
         throw new PrixNegatifException("Prix Negatif ");
     }
@@ -54,14 +44,14 @@ public class Magasin {
                 this.produits[this.nombreProduits] = p;
                 this.nombreProduits++;
                 nombreTotalProduits++;
+                System.out.println("Le produit a été ajouté avec succès.");
                 }
             else{
 
                 System.out.println("Magasin plein");
             }}
         else {
-
-            System.out.println("le produit existe");
+                System.out.println("Le magasin est plein. Impossible d'ajouter le produit.");
         }
     }
 
