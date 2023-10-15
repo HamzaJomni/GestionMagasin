@@ -31,7 +31,7 @@ public class Magasin {
             System.out.println("Le magasin est plein. Impossible d'ajouter l'employé.");
         }
     }
-    public  void ajouterProduit(Produit p) throws MagasinPleinException, PrixNegatifException {
+    public  void ajouterProduit(Produit produit) throws MagasinPleinException, PrixNegatifException {
     if (produit.getPrix() < 0) {
         throw new PrixNegatifException("Prix Negatif ");
     }
